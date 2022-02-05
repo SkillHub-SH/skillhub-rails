@@ -44,6 +44,7 @@ group :development do
   gem 'spring'
   gem 'active_model_serializers', '~> 0.10.0'
   gem 'rubocop', '~> 1.25', require: false
+  gem 'rails-erd'
 end
 
 group :test do

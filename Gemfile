@@ -46,6 +46,7 @@ group :development do
   gem 'active_model_serializers', '~> 0.10.0'
   gem 'rubocop', '~> 1.25', require: false
   gem 'rails-erd'
+  gem 'annotate'
 end
 
 group :test do

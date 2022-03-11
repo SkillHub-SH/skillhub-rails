@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_03_11_194948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "problems", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.float "time_limit", null: false
+    t.integer "memory_limit", null: false
+    t.integer "submitted_by", default: 0
+    t.string "difficullty", default: "Medium"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ranks", force: :cascade do |t|
+    t.string "title", default: "Newbie", null: false
+    t.float "score", default: 0.0, null: false
+    t.string "color", default: "Grey", null: false
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.text "source_code", null: false
+    t.integer "memory_limit", null: false
+    t.float "time_limit", null: false
+    t.string "status", default: "In Queue"
+    t.string "token", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

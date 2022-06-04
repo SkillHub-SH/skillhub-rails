@@ -47,6 +47,11 @@ group :development do
   gem 'rubocop', '~> 1.25', require: false
   gem 'rails-erd'
   gem 'annotate'
+
+  # Auth
+  gem 'devise'
+  gem 'devise-jwt'
+  gem 'rack-cors'
 end
 
 group :test do

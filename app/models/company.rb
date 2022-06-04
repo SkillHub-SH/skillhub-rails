@@ -13,10 +13,11 @@
 #
 # Indexes
 #
-#  index_companies_on_email                 (email) UNIQUE
 #  index_companies_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class Company < ApplicationRecord
   devise :database_authenticatable, :jwt_authenticatable,
          :registerable, jwt_revocation_strategy: JwtDenylist
+
+  validates :email, presence: true, uniqueness: { case_sensitive: true }
 end

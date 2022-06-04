@@ -21,11 +21,13 @@
 #
 # Indexes
 #
-#  index_developers_on_email                 (email) UNIQUE
 #  index_developers_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_developers_on_username              (username) UNIQUE
 #
 class Developer < ApplicationRecord
   devise :database_authenticatable, :jwt_authenticatable,
          :registerable, jwt_revocation_strategy: JwtDenylist
+
+  validates :email, presence: true, uniqueness: { case_sensitive: true }
+  validates :username, presence: true, uniqueness: { case_sensitive: true }
 end

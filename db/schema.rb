@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_011015) do
+ActiveRecord::Schema.define(version: 2022_06_28_190910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2022_06_16_011015) do
     t.datetime "end_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_contests_on_company_id"
   end
 
   create_table "developers", force: :cascade do |t|
@@ -74,12 +76,18 @@ ActiveRecord::Schema.define(version: 2022_06_16_011015) do
     t.string "difficullty", default: "Medium"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id"
+    t.bigint "contest_id"
+    t.index ["company_id"], name: "index_problems_on_company_id"
+    t.index ["contest_id"], name: "index_problems_on_contest_id"
   end
 
   create_table "ranks", force: :cascade do |t|
     t.string "title", default: "Newbie", null: false
     t.float "score", default: 0.0, null: false
     t.string "color", default: "Grey", null: false
+    t.bigint "developer_id"
+    t.index ["developer_id"], name: "index_ranks_on_developer_id"
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -90,6 +98,10 @@ ActiveRecord::Schema.define(version: 2022_06_16_011015) do
     t.string "token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "developer_id"
+    t.bigint "problem_id"
+    t.index ["developer_id"], name: "index_submissions_on_developer_id"
+    t.index ["problem_id"], name: "index_submissions_on_problem_id"
   end
 
 end

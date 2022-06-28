@@ -18,5 +18,8 @@
 require 'rails_helper'
 
 RSpec.describe Company, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'ActiveModel Associations' do
+    it { expect(described_class.reflect_on_association(:contests).macro).to eq(:has_many) }
+    it { expect(described_class.reflect_on_association(:problems).macro).to eq(:has_many) }
+  end
 end

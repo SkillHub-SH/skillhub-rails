@@ -2,10 +2,15 @@
 #
 # Table name: ranks
 #
-#  id    :bigint           not null, primary key
-#  color :string           default("newbie_color"), not null
-#  score :float            default(0.0), not null
-#  title :string           default("newbie"), not null
+#  id           :bigint           not null, primary key
+#  color        :string           default("newbie_color"), not null
+#  score        :float            default(0.0), not null
+#  title        :string           default("newbie"), not null
+#  developer_id :bigint
+#
+# Indexes
+#
+#  index_ranks_on_developer_id  (developer_id)
 #
 class Rank < ApplicationRecord
   include RankCallbacks
@@ -39,4 +44,7 @@ class Rank < ApplicationRecord
     international_gradmaster_color: 'Red',
     legendary_grandmaster_color: 'Red'
   }
+
+  # Associations
+  belongs_to :developer
 end

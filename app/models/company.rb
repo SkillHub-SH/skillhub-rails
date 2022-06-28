@@ -19,5 +19,10 @@ class Company < ApplicationRecord
   devise :database_authenticatable, :jwt_authenticatable,
          :registerable, jwt_revocation_strategy: JwtDenylist
 
+  # Associations
+  has_many :problems, dependent: :destroy
+  has_many :contests, dependent: :destroy
+
+  # Validations
   validates :email, presence: true, uniqueness: { case_sensitive: true }
 end

@@ -11,9 +11,17 @@
 #  start_at           :datetime         not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  company_id         :bigint
+#
+# Indexes
+#
+#  index_contests_on_company_id  (company_id)
 #
 require 'rails_helper'
 
 RSpec.describe Contest, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'ActiveModel Associations' do
+    it { expect(described_class.reflect_on_association(:company).macro).to eq(:belongs_to) }
+    it { expect(described_class.reflect_on_association(:problems).macro).to eq(:has_many) }
+  end
 end

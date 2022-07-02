@@ -7,11 +7,7 @@ module Api
 
       def index
         submissions = @developer.submissions
-        if submissions.blank?
-          render json: { message: 'No submissions found' }, status: :ok
-        else
-          render json: submissions, serializer: Api::V1::SubmissionSerializer, status: :ok
-        end
+        render json: submissions, serializer: Api::V1::SubmissionSerializer, status: :ok
       end
 
       def show

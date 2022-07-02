@@ -7,7 +7,7 @@ module Api
 
       def index
         submissions = @developer.submissions
-        render json: submissions, serializer: Api::V1::SubmissionSerializer, status: :ok
+        render json: submissions, each_serializer: Api::V1::SubmissionSerializer, status: :ok
       end
 
       def show

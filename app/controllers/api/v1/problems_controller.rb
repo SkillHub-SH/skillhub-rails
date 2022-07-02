@@ -7,7 +7,7 @@ module Api
 
       def index
         problems = @topic.problems
-        render json: problems, serializer: Api::V1::ProblemSerializer, status: :ok
+        render json: problems, each_serializer: Api::V1::ProblemSerializer, status: :ok
       end
 
       def show

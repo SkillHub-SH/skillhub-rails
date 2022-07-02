@@ -21,22 +21,12 @@
 #  index_problems_on_contest_id  (contest_id)
 #  index_problems_on_topic_id    (topic_id)
 #
-class Problem < ApplicationRecord
-  # Scopes
-  scope :easy_problems, -> { where(difficullty: :easy) }
-  scope :medium_problems, -> { where(difficullty: :medium) }
-  scope :hard_problems, -> { where(difficullty: :hard) }
+require 'rails_helper'
 
-  # Enums
-  enum difficullty: {
-    easy: 'Easy',
-    medium: 'Medium',
-    hard: 'Hard'
-  }
-
-  # Associations
-  belongs_to :company
-  belongs_to :topic
-  belongs_to :contest, optional: true
-  has_many :submissions, dependent: :destroy
+RSpec.describe Problem, type: :model do
+  describe 'ActiveModel Associations' do
+    it { expect(described_class.reflect_on_association(:submissions).macro).to eq(:has_many) }
+    it { expect(described_class.reflect_on_association(:company).macro).to eq(:belongs_to) }
+    it { expect(described_class.reflect_on_association(:contest).macro).to eq(:belongs_to) }
+  end
 end

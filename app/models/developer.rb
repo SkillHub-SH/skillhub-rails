@@ -28,6 +28,20 @@ class Developer < ApplicationRecord
   devise :database_authenticatable, :jwt_authenticatable,
          :registerable, jwt_revocation_strategy: JwtDenylist
 
+  # Associations
+  has_many :submissions, dependent: :destroy
+  has_one :rank, dependent: :destroy
+
+  # Validations
   validates :email, presence: true, uniqueness: { case_sensitive: true }
   validates :username, presence: true, uniqueness: { case_sensitive: true }
+
+  def jwt_payload
+    {
+      model: 'developer',
+      id: id,
+      email: email,
+      username: username
+    }
+  end
 end

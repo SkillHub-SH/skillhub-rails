@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_190910) do
+ActiveRecord::Schema.define(version: 2022_07_02_011658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,8 +78,10 @@ ActiveRecord::Schema.define(version: 2022_06_28_190910) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "company_id"
     t.bigint "contest_id"
+    t.bigint "topic_id"
     t.index ["company_id"], name: "index_problems_on_company_id"
     t.index ["contest_id"], name: "index_problems_on_contest_id"
+    t.index ["topic_id"], name: "index_problems_on_topic_id"
   end
 
   create_table "ranks", force: :cascade do |t|
@@ -102,6 +104,12 @@ ActiveRecord::Schema.define(version: 2022_06_28_190910) do
     t.bigint "problem_id"
     t.index ["developer_id"], name: "index_submissions_on_developer_id"
     t.index ["problem_id"], name: "index_submissions_on_problem_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

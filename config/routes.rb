@@ -12,6 +12,14 @@ Rails.application.routes.draw do
       sessions: 'api/v1/companies/sessions',
       registrations: 'api/v1/companies/registrations'
     }
+
+    namespace :api, defaults: { format: 'json' } do
+      namespace :v1 do
+        resources :problems, only: %i[index show]
+        resources :submissions, only: %i[index show create]
+        resources :topics, only: :index
+      end
+    end
     get '/member-data', to: 'members#show'
   end
 end

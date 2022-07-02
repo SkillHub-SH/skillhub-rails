@@ -13,11 +13,13 @@
 #  updated_at   :datetime         not null
 #  company_id   :bigint
 #  contest_id   :bigint
+#  topic_id     :bigint
 #
 # Indexes
 #
 #  index_problems_on_company_id  (company_id)
 #  index_problems_on_contest_id  (contest_id)
+#  index_problems_on_topic_id    (topic_id)
 #
 class Problem < ApplicationRecord
   # Scopes
@@ -34,6 +36,7 @@ class Problem < ApplicationRecord
 
   # Associations
   belongs_to :company
+  belongs_to :topic
   belongs_to :contest, optional: true
   has_many :submissions, dependent: :destroy
 end

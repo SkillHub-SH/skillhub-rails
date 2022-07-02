@@ -10,11 +10,18 @@
 #  token        :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  developer_id :bigint
+#  problem_id   :bigint
+#
+# Indexes
+#
+#  index_submissions_on_developer_id  (developer_id)
+#  index_submissions_on_problem_id    (problem_id)
 #
 class Submission < ApplicationRecord
   # Scopes
-  # scope :for_problem, -> (peoblem_id) { where(problem_id: peoblem_id) }
-  # scope :by_developer, -> (developer_id) { where(developer_id: developer_id)}
+  scope :for_problem, -> (peoblem_id) { where(problem_id: peoblem_id) }
+  scope :by_developer, -> (developer_id) { where(developer_id: developer_id) }
 
   # Enums
   enum status: {
@@ -28,4 +35,8 @@ class Submission < ApplicationRecord
     internal_error: 'Internal Error',
     exec_format_error: 'Exec Format Error'
   }
+
+  # Associations
+  belongs_to :developer
+  belongs_to :problem
 end

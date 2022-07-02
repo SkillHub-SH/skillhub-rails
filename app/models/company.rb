@@ -25,4 +25,12 @@ class Company < ApplicationRecord
 
   # Validations
   validates :email, presence: true, uniqueness: { case_sensitive: true }
+
+  def jwt_payload
+    {
+      model: 'company',
+      id: id,
+      email: email
+    }
+  end
 end

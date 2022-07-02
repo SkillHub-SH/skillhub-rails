@@ -7,12 +7,7 @@ module Api
 
       def index
         problems = @topic.problems
-
-        if problems.blank?
-          render json: { message: 'No problems on this topic yet' }, status: :ok
-        else
-          render json: problems, serializer: Api::V1::ProblemSerializer, status: :ok
-        end
+        render json: problems, serializer: Api::V1::ProblemSerializer, status: :ok
       end
 
       def show

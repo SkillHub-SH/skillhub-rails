@@ -1,7 +1,7 @@
 module Api
   module V1
     # Submission controller that perform the following actions:
-    class SubmissionController < ApplicationController
+    class SubmissionsController < ApplicationController
       before_action :find_developer, only: %i[index create]
       before_action :find_submission, only: :show
 

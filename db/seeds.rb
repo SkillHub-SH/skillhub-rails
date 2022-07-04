@@ -96,3 +96,9 @@ end
     company_id: 5
   )
 end
+
+ProgrammingLanguge.create(name: 'C (GCC 7.4.0)', judge_code: 48)
+ProgrammingLanguge.create(name: 'C++ (GCC 7.4.0)', judge_code: 52)
+ProgrammingLanguge.create(name: 'Java (OpenJDK 13.0.1)', judge_code: 62)
+ProgrammingLanguge.create(name: 'Python (3.8.1)', judge_code: 71)
+ProgrammingLanguge.create(name: 'Ruby (2.7.0)', judge_code: 72)

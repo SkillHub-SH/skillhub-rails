@@ -1,3 +1,5 @@
+# TODO: Organize Gemfile
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -30,8 +32,16 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.1.0'
+
+  # Auth
+  gem 'devise'
+  gem 'devise-jwt'
+  gem 'rack-cors'
+
+  gem 'faraday'
+  gem 'faraday-net_http'
 end
 
 group :development do
@@ -39,20 +49,15 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
   gem 'active_model_serializers', '~> 0.10.0'
-  gem 'rubocop', '~> 1.25', require: false
-  gem 'rails-erd'
   gem 'annotate'
-
-  # Auth
-  gem 'devise'
-  gem 'devise-jwt'
-  gem 'rack-cors'
+  gem 'rails-erd'
+  gem 'rubocop', '~> 1.25', require: false
 end
 
 group :test do
@@ -61,24 +66,20 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-
-  gem 'devise'
-  gem 'devise-jwt'
-  gem 'rack-cors'
 end
 
 group :production do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
   gem 'active_model_serializers', '~> 0.10.0'
-  gem 'rubocop', '~> 1.25', require: false
-  gem 'rails-erd'
   gem 'annotate'
+  gem 'rails-erd'
+  gem 'rubocop', '~> 1.25', require: false
 
   # Auth
   gem 'devise'
@@ -90,7 +91,10 @@ group :production do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
+  gem 'faraday'
+  gem 'faraday-net_http'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

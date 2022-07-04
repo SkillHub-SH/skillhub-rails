@@ -5,7 +5,9 @@
 #  id           :bigint           not null, primary key
 #  body         :text             not null
 #  difficullty  :string           default("medium")
+#  input        :string           default(" "), not null
 #  memory_limit :integer          not null
+#  output       :string           default(" "), not null
 #  submitted_by :integer          default(0)
 #  time_limit   :float            not null
 #  title        :string           not null

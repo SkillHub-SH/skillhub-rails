@@ -113,6 +113,9 @@ GEM
     dry-core (0.7.1)
       concurrent-ruby (~> 1.0)
     erubi (1.10.0)
+    faraday (0.10.1)
+      multipart-post (>= 1.2, < 3)
+    faraday-net_http (2.0.3)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -138,6 +141,7 @@ GEM
     mini_portile2 (2.7.1)
     minitest (5.15.0)
     msgpack (1.4.4)
+    multipart-post (2.0.0)
     nio4r (2.5.8)
     nokogiri (1.13.1)
       mini_portile2 (~> 2.7.0)
@@ -302,6 +306,8 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-jwt
+  faraday
+  faraday-net_http
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

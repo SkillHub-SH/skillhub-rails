@@ -23,7 +23,7 @@ module Api
         end
 
         def register_success
-          render json: { message: 'Signed up successfully.' }, status: :ok
+          render json: { message: 'Signed up successfully.' }, status: :created
         end
 
         def register_failed

@@ -9,7 +9,7 @@ module Api
         private
 
         def configure_permitted_parameters
-          devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password])
+          devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :password])
         end
 
         def respond_with(resource, _opts = {})
@@ -19,7 +19,7 @@ module Api
         end
 
         def register_success
-          render json: { message: 'Signed up successfully.' }, status: :ok
+          render json: { message: 'Signed up successfully.' }, status: :created
         end
 
         def register_failed

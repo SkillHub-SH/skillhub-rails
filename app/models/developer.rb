@@ -44,4 +44,9 @@ class Developer < ApplicationRecord
       username: username
     }
   end
+
+  def update_rank(problem_score)
+    current_score = rank.score
+    rank.update(score: current_score + problem_score)
+  end
 end

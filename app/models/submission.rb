@@ -42,4 +42,13 @@ class Submission < ApplicationRecord
   belongs_to :developer
   belongs_to :problem
   belongs_to :programming_languge
+
+  # Callbacks
+  after_create :update_developer_rank
+
+  def update_developer_rank
+    return unless status.equal?('Accepted')
+
+    developer.update_rank(problem.score)
+  end
 end

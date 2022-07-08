@@ -11,6 +11,7 @@
 #  notes              :text
 #  output             :string           default(" "), not null
 #  output_description :text
+#  score              :float            default(0.0), not null
 #  submitted_by       :integer          default(0)
 #  time_limit         :float            not null
 #  title              :string           not null

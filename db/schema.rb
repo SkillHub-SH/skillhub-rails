@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_06_162655) do
+ActiveRecord::Schema.define(version: 2022_07_06_233904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2022_07_06_162655) do
     t.text "input_description"
     t.text "output_description"
     t.text "notes"
+    t.float "score", default: 0.0, null: false
     t.index ["company_id"], name: "index_problems_on_company_id"
     t.index ["contest_id"], name: "index_problems_on_contest_id"
     t.index ["topic_id"], name: "index_problems_on_topic_id"

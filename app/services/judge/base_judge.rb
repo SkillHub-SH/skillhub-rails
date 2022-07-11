@@ -2,10 +2,10 @@ module Judge
   # BaseJudge class is created to contain all
   # the common methods used in deifferent action
   class BaseJudge
-    def initialize_connection(url, params)
+    def initialize_connection(url)
       Faraday.new(
         url: url,
-        params: params,
+        # params: params,
         headers: {
           'Content-Type' => 'application/json',
           'X-RapidAPI-Key' => 'b3dbae9531mshbbdab592822f11dp1605bejsnf25649f22823',

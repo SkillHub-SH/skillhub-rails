@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_06_233904) do
+ActiveRecord::Schema.define(version: 2022_07_11_112057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,8 +108,8 @@ ActiveRecord::Schema.define(version: 2022_07_06_233904) do
 
   create_table "submissions", force: :cascade do |t|
     t.text "source_code", null: false
-    t.integer "memory_limit", null: false
-    t.float "time_limit", null: false
+    t.float "memory_limit"
+    t.float "time_limit"
     t.string "status", default: "In Queue"
     t.string "token", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 2022_07_06_233904) do
     t.bigint "developer_id"
     t.bigint "problem_id"
     t.bigint "programming_languges_id"
+    t.text "input"
+    t.text "output"
     t.index ["developer_id"], name: "index_submissions_on_developer_id"
     t.index ["problem_id"], name: "index_submissions_on_problem_id"
     t.index ["programming_languges_id"], name: "index_submissions_on_programming_languges_id"

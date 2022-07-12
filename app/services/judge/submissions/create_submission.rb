@@ -17,7 +17,6 @@ module Judge
 
         response_body = JSON.parse(response.body)
         submission = Submission.new(@params.merge!(response_body))
-        puts "@params - #{@params}"
         if submission.save
           [true, submission]
         else
@@ -48,12 +47,7 @@ module Judge
         request = Net::HTTP::Post.new(uri.path, request_header)
         request.body = request_body.to_json
 
-        response = http.request(request)
-        puts response.body
-        puts "response body class - #{response.body.class}"
-        puts JSON.parse(response.body)
-        puts response.code
-        response
+        http.request(request)
       end
     end
   end

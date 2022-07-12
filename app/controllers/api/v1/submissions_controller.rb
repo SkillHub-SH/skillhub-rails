@@ -19,8 +19,7 @@ module Api
 
       def create
         create_submission_result = Judge::Submissions::CreateSubmission.new(submission_params, @problem, @programming_languge).create
-        puts "create_submission_result - #{create_submission_result}"
-        puts "submission PL - #{create_submission_result[1].programming_languge}"
+
         if create_submission_result[0]
           render json: create_submission_result[1], serializer: Api::V1::SubmissionSerializer, status: :created
         else

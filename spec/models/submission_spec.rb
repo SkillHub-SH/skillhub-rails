@@ -3,10 +3,12 @@
 # Table name: submissions
 #
 #  id                      :bigint           not null, primary key
-#  memory_limit            :integer          not null
+#  input                   :text
+#  memory_limit            :float
+#  output                  :text
 #  source_code             :text             not null
 #  status                  :string           default("in_queue")
-#  time_limit              :float            not null
+#  time_limit              :float
 #  token                   :string           not null
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null

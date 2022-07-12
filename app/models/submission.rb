@@ -3,10 +3,12 @@
 # Table name: submissions
 #
 #  id                      :bigint           not null, primary key
-#  memory_limit            :integer          not null
+#  input                   :text
+#  memory_limit            :float
+#  output                  :text
 #  source_code             :text             not null
 #  status                  :string           default("in_queue")
-#  time_limit              :float            not null
+#  time_limit              :float
 #  token                   :string           not null
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
@@ -41,7 +43,7 @@ class Submission < ApplicationRecord
   # Associations
   belongs_to :developer
   belongs_to :problem
-  belongs_to :programming_languge
+  belongs_to :programming_languge, optional: true
 
   # Callbacks
   after_create :update_developer_rank

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_112057) do
+ActiveRecord::Schema.define(version: 2022_07_13_014450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 2022_07_11_112057) do
     t.index ["jti"], name: "index_jwt_denylists_on_jti"
   end
 
+  create_table "levels", force: :cascade do |t|
+    t.string "title", default: "Basic", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "roadmap_id"
+    t.index ["roadmap_id"], name: "index_levels_on_roadmap_id"
+  end
+
   create_table "problems", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
@@ -104,6 +112,25 @@ ActiveRecord::Schema.define(version: 2022_07_11_112057) do
     t.string "color", default: "Grey", null: false
     t.bigint "developer_id"
     t.index ["developer_id"], name: "index_ranks_on_developer_id"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "url", null: false
+    t.integer "estimated_time", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "level_id"
+    t.index ["level_id"], name: "index_resources_on_level_id"
+  end
+
+  create_table "roadmaps", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "topic_id"
+    t.index ["topic_id"], name: "index_roadmaps_on_topic_id"
   end
 
   create_table "submissions", force: :cascade do |t|

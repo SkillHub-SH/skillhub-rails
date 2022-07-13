@@ -22,6 +22,7 @@ Rails.application.routes.draw do
         resources :submissions, only: %i[index show create]
         resources :topics, only: :index
         resources :programming_languges, only: %i[index show]
+        resources :roadmaps, only: :index
       end
     end
     get '/member-data', to: 'members#show'

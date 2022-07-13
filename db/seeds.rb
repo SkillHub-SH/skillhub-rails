@@ -23,6 +23,10 @@
   )
 end
 
+100.times do |iter|
+  Rank.create(title: 'Expert', color: 'Blue', score: (iter + 1) * 10, developer_id: iter + 1)
+end
+
 # Create Compamies
 5.times do |iter|
   Company.create(
@@ -147,8 +151,9 @@ end
   )
 end
 
-ProgrammingLanguge.create(name: 'C (GCC 7.4.0)', judge_code: 48)
-ProgrammingLanguge.create(name: 'C++ (GCC 7.4.0)', judge_code: 52)
-ProgrammingLanguge.create(name: 'Java (OpenJDK 13.0.1)', judge_code: 62)
-ProgrammingLanguge.create(name: 'Python (3.8.1)', judge_code: 71)
-ProgrammingLanguge.create(name: 'Ruby (2.7.0)', judge_code: 72)
+ProgrammingLanguge.create(name: 'C (GCC 7.4.0)', judge_code: 48, extension: 'c')
+ProgrammingLanguge.create(name: 'C++ (GCC 7.4.0)', judge_code: 52, extension: 'cpp')
+ProgrammingLanguge.create(name: 'Java (OpenJDK 13.0.1)', judge_code: 62, extension: 'java')
+ProgrammingLanguge.create(name: 'Python (3.8.1)', judge_code: 71, extension: 'python')
+ProgrammingLanguge.create(name: 'Ruby (2.7.0)', judge_code: 72, extension: 'ruby')
+ProgrammingLanguge.create(name: 'JavaScript (Node.js 12.14.0)', judge_code: 63, extension: 'javascript')

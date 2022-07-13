@@ -3,6 +3,7 @@
 # Table name: programming_languges
 #
 #  id         :bigint           not null, primary key
+#  extension  :string
 #  judge_code :integer          not null
 #  name       :string           not null
 #  created_at :datetime         not null

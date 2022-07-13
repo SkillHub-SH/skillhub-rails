@@ -10,6 +10,7 @@
 class Topic < ApplicationRecord
   # Association
   has_many :problems
+  has_one :roadmap
 
   # Validation
   validates :name, uniqueness: { case_sensitive: true }

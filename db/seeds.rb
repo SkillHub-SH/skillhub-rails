@@ -37,6 +37,56 @@ end
   Topic.create(name: "Topic#{iter}")
 end
 
+Roadmap.create(title: 'Roadmap1', description: 'roadmap description1', topic_id: 1)
+Roadmap.create(title: 'Roadmap2', description: 'roadmap description2', topic_id: 2)
+Roadmap.create(title: 'Roadmap3', description: 'roadmap description3', topic_id: 3)
+Roadmap.create(title: 'Roadmap4', description: 'roadmap description4', topic_id: 4)
+Roadmap.create(title: 'Roadmap5', description: 'roadmap description5', topic_id: 1)
+
+Level.create(title: 'Basic', roadmap_id: 1)
+Level.create(title: 'Intermediate', roadmap_id: 1)
+Level.create(title: 'Advanced', roadmap_id: 1)
+
+Level.create(title: 'Basic', roadmap_id: 2)
+Level.create(title: 'Intermediate', roadmap_id: 2)
+Level.create(title: 'Advanced', roadmap_id: 2)
+
+Level.create(title: 'Basic', roadmap_id: 3)
+Level.create(title: 'Intermediate', roadmap_id: 3)
+Level.create(title: 'Advanced', roadmap_id: 3)
+
+Level.create(title: 'Basic', roadmap_id: 4)
+Level.create(title: 'Intermediate', roadmap_id: 4)
+Level.create(title: 'Advanced', roadmap_id: 4)
+
+Level.create(title: 'Basic', roadmap_id: 5)
+Level.create(title: 'Intermediate', roadmap_id: 5)
+Level.create(title: 'Advanced', roadmap_id: 5)
+
+Resource.create(title: 'Resource1', url: 'url', estimated_time: 10, level_id: 1)
+Resource.create(title: 'Resource2', url: 'url', estimated_time: 10, level_id: 1)
+Resource.create(title: 'Resource3', url: 'url', estimated_time: 10, level_id: 1)
+
+Resource.create(title: 'Resource1', url: 'url', estimated_time: 10, level_id: 2)
+Resource.create(title: 'Resource2', url: 'url', estimated_time: 10, level_id: 2)
+Resource.create(title: 'Resource3', url: 'url', estimated_time: 10, level_id: 2)
+
+Resource.create(title: 'Resource1', url: 'url', estimated_time: 10, level_id: 3)
+Resource.create(title: 'Resource2', url: 'url', estimated_time: 10, level_id: 3)
+Resource.create(title: 'Resource3', url: 'url', estimated_time: 10, level_id: 3)
+
+Resource.create(title: 'Resource1', url: 'url', estimated_time: 10, level_id: 4)
+Resource.create(title: 'Resource2', url: 'url', estimated_time: 10, level_id: 4)
+Resource.create(title: 'Resource3', url: 'url', estimated_time: 10, level_id: 4)
+
+Resource.create(title: 'Resource1', url: 'url', estimated_time: 10, level_id: 5)
+Resource.create(title: 'Resource2', url: 'url', estimated_time: 10, level_id: 5)
+Resource.create(title: 'Resource3', url: 'url', estimated_time: 10, level_id: 5)
+
+Resource.create(title: 'Resource1', url: 'url', estimated_time: 10, level_id: 6)
+Resource.create(title: 'Resource2', url: 'url', estimated_time: 10, level_id: 6)
+Resource.create(title: 'Resource3', url: 'url', estimated_time: 10, level_id: 6)
+
 10.times do |iter|
   Problem.create(
     title: "Problem number #{iter} title",

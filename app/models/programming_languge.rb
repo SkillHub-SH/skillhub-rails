@@ -14,4 +14,8 @@ class ProgrammingLanguge < ApplicationRecord
 
   # Validation
   validates :judge_code, presence: true, uniqueness: true
+
+  def self.default_languages_names
+    %w[c cpp javascript java python ruby]
+  end
 end

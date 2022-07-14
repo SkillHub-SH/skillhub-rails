@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_13_122329) do
+ActiveRecord::Schema.define(version: 2022_07_14_015328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2022_07_13_122329) do
   end
 
   create_table "contests", force: :cascade do |t|
-    t.integer "number_of_problems", null: false
     t.string "name", null: false
     t.string "level", default: "junior", null: false
     t.text "description"
@@ -37,6 +36,8 @@ ActiveRecord::Schema.define(version: 2022_07_13_122329) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "company_id"
+    t.string "status", default: "Upcoming", null: false
+    t.boolean "verified", default: false, null: false
     t.index ["company_id"], name: "index_contests_on_company_id"
   end
 

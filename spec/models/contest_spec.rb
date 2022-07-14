@@ -2,16 +2,17 @@
 #
 # Table name: contests
 #
-#  id                 :bigint           not null, primary key
-#  description        :text
-#  end_at             :datetime         not null
-#  level              :string           default("junior"), not null
-#  name               :string           not null
-#  number_of_problems :integer          not null
-#  start_at           :datetime         not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  company_id         :bigint
+#  id          :bigint           not null, primary key
+#  description :text
+#  end_at      :datetime         not null
+#  level       :string           default(NULL), not null
+#  name        :string           not null
+#  start_at    :datetime         not null
+#  status      :string           default("upcoming"), not null
+#  verified    :boolean          default(FALSE), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  company_id  :bigint
 #
 # Indexes
 #

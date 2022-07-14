@@ -46,10 +46,22 @@ class Problem < ApplicationRecord
   belongs_to :contest, optional: true
   has_many :submissions, dependent: :destroy
 
+  # Validations
+  validates :input, :output, presence: true
+
+  # Callbacks
+  after_create :verify_contest
+
   def accepted_percentage
     return 0 if submissions.count.zero?
 
     num_of_accepted_submissions = submissions.where(status: 'Accepted').count
     (num_of_accepted_submissions / submissions.count).to_f
+  end
+
+  private
+
+  def verify_contest
+    Contest.update(contest_id, verified: true) if contest_id.present?
   end
 end

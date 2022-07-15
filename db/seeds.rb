@@ -143,17 +143,17 @@ Resource.create(title: 'Graph - Geeks4Geeks',
 end
 
 Problem.create(
-  title: 'Solve Me First',
-  body: "
+  title: 'Watermelon',
+  body: """
     One hot summer day Pete and his friend Billy decided to buy a watermelon. They chose the biggest and the ripest one, in their opinion. After that the watermelon was weighed, and the scales showed w kilos. They rushed home, dying of thirst, and decided to divide the berry, however they faced a hard problem.
     Pete and Billy are great fans of even numbers, that's why they want to divide the watermelon in such a way that each of the two parts weighs even number of kilos, at the same time it is not obligatory that the parts are equal. The boys are extremely tired and want to start their meal as soon as possible, that's why you should help them and find out, if they can divide the watermelon in the way they want. For sure, each of them should get a part of positive weight.
-  ",
-  input_description: "
+  """,
+  input_description: """
     The first (and the only) input line contains integer number w (1 ≤ w ≤ 100) — the weight of the watermelon bought by the boys.
-  ",
-  output_description: "
+  """,
+  output_description: """
     Print YES, if the boys can divide the watermelon into two parts, each of them weighing even number of kilos; and NO in the opposite case.
-  ",
+  """,
   input: 'input',
   output: '8',
   notes: 'For example, the boys can divide the watermelon into two parts of 2 and 6 kilos respectively (another variant — two parts of 4 and 4 kilos).',
@@ -166,15 +166,15 @@ Problem.create(
 
 Problem.create(
   title: 'Hello World',
-  body: "
+  body: """
     Let's get started with Ruby!
     Go ahead and type the following code in the code-editor:
-  ",
-  input_description: "
+  """,
+  input_description: """
     puts 'Hello, World!'
-  ",
-  output_description: "
-  ",
+  """,
+  output_description: """
+  """,
   input: '',
   output: 'Hello, World!',
   notes: '',
@@ -186,17 +186,17 @@ Problem.create(
 )
 
 Problem.create(
-  title: 'Hello World',
-  body: "
+  title: 'Everything is object',
+  body: """
     Everything is an object in Ruby. For instance, if you type
     puts self
     in the code-editor, Ruby treats self as the object in which it is currently referred to.
     Give it a try!
-  ",
-  input_description: "
-  ",
-  output_description: "
-  ",
+  """,
+  input_description: """
+  """,
+  output_description: """
+  """,
   input: '',
   output: 'main',
   notes: '',
@@ -208,20 +208,20 @@ Problem.create(
 )
 
 Problem.create(
-  title: 'Hello World',
-  body: "
+  title: 'Is even?',
+  body: """
     Each object in Ruby may have methods associated with it. To demonstrate this, we want you to print whether a number is even or odd. A number has an even? method associated with it, which returns true or false based on the parity of the number.
     Assuming a variable number is already defined, check whether a given number is even or not.
     Hint
     Type in the code-editor
     return number.even? or number.even?
-  ",
-  input_description: "
+  """,
+  input_description: """
     The first line of input contains an integer (n). The next (n) contains one integer in each line.
-  ",
-  output_description: "
+  """,
+  output_description: """
     The output is handled by the code written in the editor.
-  ",
+  """,
   input: '8',
   output: 'true',
   notes: '',

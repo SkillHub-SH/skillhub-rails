@@ -36,6 +36,9 @@ class Developer < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: true }
   validates :username, presence: true, uniqueness: { case_sensitive: true }
 
+  # Callbacks
+  after_create :initialize_rank
+
   def jwt_payload
     {
       model: 'developer',
@@ -48,5 +51,11 @@ class Developer < ApplicationRecord
   def update_rank(problem_score)
     current_score = rank.score
     rank.update(score: current_score + problem_score)
+  end
+
+  private
+
+  def initialize_rank
+    Rank.create(developer_id: id)
   end
 end

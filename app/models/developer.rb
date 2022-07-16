@@ -30,6 +30,8 @@ class Developer < ApplicationRecord
 
   # Associations
   has_many :submissions, dependent: :destroy
+  has_many :job_applications
+  has_many :jobs, through: :job_applications
   has_one :rank, dependent: :destroy
 
   # Validations

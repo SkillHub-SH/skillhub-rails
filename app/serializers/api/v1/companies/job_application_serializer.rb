@@ -18,7 +18,7 @@ module Api
         end
 
         def developer_name
-          object.developer.name
+          object.developer.username
         end
 
         def developer_email

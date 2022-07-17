@@ -18,6 +18,9 @@ Rails.application.routes.draw do
         namespace :companies do
           resources :problems, only: %i[index create]
           resources :contests, only: %i[index create show]
+          resources :jobs, only: %i[index show create]
+          resources :job_applications, only: %i[index show]
+          resources :profiles, only: %i[show update]
         end
         resources :problems, only: %i[index show]
         resources :submissions, only: %i[index show create]
@@ -25,6 +28,9 @@ Rails.application.routes.draw do
         resources :programming_languges, only: %i[index show]
         resources :roadmaps, only: :index
         resources :leaderboards, only: :index
+        resources :jobs, only: %i[index show]
+        resources :job_applications, only: %i[index create]
+        resources :profiles, only: %i[show update]
       end
     end
     get '/member-data', to: 'members#show'

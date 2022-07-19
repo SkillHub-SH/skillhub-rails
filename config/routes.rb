@@ -33,6 +33,7 @@ Rails.application.routes.draw do
         resources :jobs, only: %i[index show]
         resources :job_applications, only: %i[index create]
         resources :profiles, only: %i[show update]
+        resources :contests, only: :index
       end
     end
     get '/member-data', to: 'members#show'

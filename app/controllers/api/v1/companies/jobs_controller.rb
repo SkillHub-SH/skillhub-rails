@@ -4,7 +4,7 @@ module Api
       class JobsController < ApplicationController
         skip_before_action :verify_authenticity_token
         before_action :find_company, only: :index
-        before_action :find_job, only: :show
+        before_action :find_job, only: %i[show destroy]
 
         def index
           jobs = @company.jobs
@@ -23,6 +23,11 @@ module Api
           else
             render json: { errors: job.errors.full_messages }, status: :unprocessable_entity
           end
+        end
+
+        def destroy
+          @job.destroy
+          render json: { errors: 'Job deleted successfully' }, status: :ok
         end
 
         private

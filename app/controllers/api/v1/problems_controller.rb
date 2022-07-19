@@ -2,7 +2,7 @@ module Api
   module V1
     # Problems controller, contains the following actions:
     class ProblemsController < ApplicationController
-      before_action :find_topic, only: %i[index recommended_problems]
+      before_action :find_topic, only: %i[index]
       before_action :find_problem, only: :show
 
       def index

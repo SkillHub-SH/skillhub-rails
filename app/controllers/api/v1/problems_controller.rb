@@ -15,7 +15,7 @@ module Api
       end
 
       def recommended_problems
-        problems = @topic.problems.where(difficullty: params[:difficullty])
+        problems = Problem.last(5)
         render json: problems, each_serializer: Api::V1::ProblemSerializer, status: :ok
       end
 

@@ -7,21 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create Developers
-100.times do |iter|
-  Developer.create(
-    email: "developer_email#{iter}@developers.com",
-    username: "developer#{iter}",
-    password: 'password',
-    password_confirmation: 'password',
-    bio: "This developer number#{iter} bio",
-    bersonal_website_link: 'wwww.example.come',
-    facebook_link: 'facebook.com/profile',
-    twitter_link: 'twitter.com/profile',
-    linkedin_link: 'linkedin.com/profile',
-    stackoverflow_link: 'stackoverflow.com/profile',
-    github_link: 'github/profile'
-  )
-end
+# 100.times do |iter|
+#   Developer.create(
+#     email: "developer_email#{iter}@developers.com",
+#     username: "developer#{iter}",
+#     password: 'password',
+#     password_confirmation: 'password',
+#     bio: "This developer number#{iter} bio",
+#     bersonal_website_link: 'wwww.example.come',
+#     facebook_link: 'facebook.com/profile',
+#     twitter_link: 'twitter.com/profile',
+#     linkedin_link: 'linkedin.com/profile',
+#     stackoverflow_link: 'stackoverflow.com/profile',
+#     github_link: 'github/profile'
+#   )
+# end
 
 Developer.create(
   email: 'aaa.shawareb@gmail.com',
@@ -29,6 +29,62 @@ Developer.create(
   password: 'password',
   password_confirmation: 'password',
   bio: 'Software Engineer at UMAI | Rubyist',
+  bersonal_website_link: 'https://ashawareb.hashnode.dev/',
+  facebook_link: 'https://www.facebook.com/ashawarebb/',
+  twitter_link: 'https://twitter.com/ashawarebb',
+  linkedin_link: 'https://www.linkedin.com/in/abdulrahman-shawareb/',
+  stackoverflow_link: 'https://stackoverflow.com/users/14359742/abdulrahman-shawareb',
+  github_link: 'https://github.com/ashawareb'
+)
+
+Developer.create(
+  email: 'ammar.ibrahim@gmail.com',
+  username: 'ammar',
+  password: 'password',
+  password_confirmation: 'password',
+  bio: 'IS student',
+  bersonal_website_link: 'https://ashawareb.hashnode.dev/',
+  facebook_link: 'https://www.facebook.com/ashawarebb/',
+  twitter_link: 'https://twitter.com/ashawarebb',
+  linkedin_link: 'https://www.linkedin.com/in/abdulrahman-shawareb/',
+  stackoverflow_link: 'https://stackoverflow.com/users/14359742/abdulrahman-shawareb',
+  github_link: 'https://github.com/ashawareb'
+)
+
+Developer.create(
+  email: 'sherif.hesham@gmail.com',
+  username: 'sherif',
+  password: 'password',
+  password_confirmation: 'password',
+  bio: 'IS student',
+  bersonal_website_link: 'https://ashawareb.hashnode.dev/',
+  facebook_link: 'https://www.facebook.com/ashawarebb/',
+  twitter_link: 'https://twitter.com/ashawarebb',
+  linkedin_link: 'https://www.linkedin.com/in/abdulrahman-shawareb/',
+  stackoverflow_link: 'https://stackoverflow.com/users/14359742/abdulrahman-shawareb',
+  github_link: 'https://github.com/ashawareb'
+)
+
+Developer.create(
+  email: 'nada.saber@gmail.com',
+  username: 'nada',
+  password: 'password',
+  password_confirmation: 'password',
+  bio: 'IS student',
+  bersonal_website_link: 'https://ashawareb.hashnode.dev/',
+  facebook_link: 'https://www.facebook.com/ashawarebb/',
+  twitter_link: 'https://twitter.com/ashawarebb',
+  linkedin_link: 'https://www.linkedin.com/in/abdulrahman-shawareb/',
+  stackoverflow_link: 'https://stackoverflow.com/users/14359742/abdulrahman-shawareb',
+  github_link: 'https://github.com/ashawareb'
+)
+
+Developer.create(
+  email: 'rehab.rabie@gmail.com',
+  username: 'rehab',
+  password: 'password',
+  password_confirmation: 'password',
+  bio: 'IS student',
   bersonal_website_link: 'https://ashawareb.hashnode.dev/',
   facebook_link: 'https://www.facebook.com/ashawarebb/',
   twitter_link: 'https://twitter.com/ashawarebb',
